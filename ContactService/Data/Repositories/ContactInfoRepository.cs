@@ -67,7 +67,7 @@ namespace ContactService.Data.Repositories
         /// <summary>
         /// Yeni bir ContactInfo kaydı ekler
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">ContactInfo</param>
         public async Task Insert(ContactInfo entity)
         {
             entity.Uuid = Guid.NewGuid();

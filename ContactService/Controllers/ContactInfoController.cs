@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ContactService.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ContactInfoController : ControllerBase
     {
@@ -30,7 +30,7 @@ namespace ContactService.Controllers
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<ContactInfoDTO>> GetContactInfos()
+        public ActionResult<IEnumerable<ContactInfoDTO>> GetInfos()
         {
             var contactInfos = _contactInfoRepository.GetAll().ToList();
             return Ok(contactInfos.ToContactInfoDTO());

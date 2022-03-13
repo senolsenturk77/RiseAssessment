@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ContactService.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ContactController : ControllerBase
     {

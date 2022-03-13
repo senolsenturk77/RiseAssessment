@@ -1,11 +1,10 @@
-﻿
-using ContactService.Data.Entities;
+﻿using ReportService.Data.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ContactService.Data.Entities
+namespace ReportService.Data.Entities
 {
     public class ContactInfoDTO : BaseEntity
     {

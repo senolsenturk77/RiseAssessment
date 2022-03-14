@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ContactService.Data.Repositories
 {
-    public class ContactInfoRepository : IRepository<ContactInfo>
+    public class ContactInfoRepository : IContactInfoRepository
     {
         ContactDbContext _dbContext;
 

@@ -22,6 +22,21 @@ namespace ContactService.Data.Helper
         }
 
 
+        public static List<Contact> ToContact(this IEnumerable<ContactDTO> contacts)
+        {
+
+            var retList = new List<Contact>();
+
+            foreach (var contact in contacts)
+            {
+                retList.Add(contact.ToContact());
+            }
+
+            return retList;
+
+        }
+
+
         public static ContactDTO ToContactDTO(this Contact contact)
         {
 
@@ -66,6 +81,8 @@ namespace ContactService.Data.Helper
 
 
 
+
+      
         public static ContactInfoDTO ToContactInfoDTO(this ContactInfo contactInfo)
         {
 

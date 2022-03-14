@@ -1,6 +1,7 @@
 ﻿using ContactService.Data.Entities;
 using ContactService.Data.Helper;
 using ContactService.Data.Repositories;
+using ContactService.Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -17,10 +18,10 @@ namespace ContactService.Controllers
     {
 
         private readonly ILogger<ContactInfoController> _logger;
-        private readonly ContactRepository _contactRepository;
-        private readonly ContactInfoRepository _contactInfoRepository;
+        private readonly IContactRepository _contactRepository;
+        private readonly IContactInfoRepository _contactInfoRepository;
 
-        public ContactInfoController(ILogger<ContactInfoController> logger, ContactRepository contactRepository, ContactInfoRepository contactInfoRepository)
+        public ContactInfoController(ILogger<ContactInfoController> logger, IContactRepository contactRepository, IContactInfoRepository contactInfoRepository)
         {
 
             _logger = logger;

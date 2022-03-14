@@ -14,6 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ContactService.Data.Repositories;
+using ContactService.Data.Repositories.Interfaces;
+using ContactService.Data.Entities;
 
 namespace ContactService
 {
@@ -31,7 +33,15 @@ namespace ContactService
         {
             services.AddDbContext<ContactDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DbContextConnStr")));
             services.AddScoped<DbContext>(provider=> provider.GetService<ContactDbContext>());
-            services.AddScoped<ContactRepository>();
+            services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IContactInfoRepository, ContactInfoRepository>();
+
+            
+            services.AddScoped<IContactRepository, ContactRepository>();
+
+
+
+
             services.AddScoped<ContactInfoRepository>();
 
 
